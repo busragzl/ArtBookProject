@@ -19,9 +19,14 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)) // Similator üzerinde editText tıklandığında diger editTestlerin üzeri kapandığı için
+        view.addGestureRecognizer(gestureRecognizer) // view üzerinde neresi tıklanırsa tıklansın keybord kapanması için
+        
     }
-    
+
+    @objc func hideKeyboard() {
+        view.endEditing(true) // klavye kapatma
+    }
 
    
     @IBAction func saveButtonClicked(_ sender: Any) {
