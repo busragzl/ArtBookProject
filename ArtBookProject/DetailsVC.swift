@@ -2,7 +2,7 @@
 //  DetailsVC.swift
 //  ArtBookProject
 //
-//  Created by Musa on 23.01.2025.
+//  Created by Büşra on 23.01.2025.
 //
 
 import UIKit
@@ -16,9 +16,59 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var artistText: UITextField!
     @IBOutlet weak var yearText: UITextField!
     
+    var chosenPainting = ""
+    var chosenPaintingId : UUID?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if chosenPainting != "" {
+            // CoreData
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            
+            let idString = chosenPaintingId?.uuidString
+            // id ile filtreleme
+            fetchRequest.predicate = NSPredicate(format: "id= %@", idString!) // id'si argümana eşit olanı getir
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            do{
+                let results = try context.fetch(fetchRequest)
+                
+                if results.count > 0 {
+                    
+                    for result in results as! [NSManagedObject] {
+                        if let name = result.value(forKey: "name") as? String {
+                            nameText.text = name
+                        }
+                        if let artist = result.value(forKey: "artist") as? String {
+                            artistText.text = artist
+                        }
+                        if let year = result.value(forKey: "year") as? Int {
+                            yearText.text = String(year)
+                        }
+                        if let imageData = result.value(forKey: "image") as? Data {
+                            let image = UIImage(data: imageData)
+                            imageView.image = image
+                        }
+                    }
+                }
+            }catch{
+                print("Error")
+            }
+            
+            
+            
+        }else {
+            nameText.text = ""
+            artistText.text = ""
+            yearText.text = ""
+        }
         
         
         //Recognizer
@@ -52,9 +102,12 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         self.dismiss(animated: true) // picker'ın kapatılması
         
     } // image seçimi bittiğinde any tipinde seçilen görselin döndürülmesi
+    
+
 
    
     @IBAction func saveButtonClicked(_ sender: Any) {
+        
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -84,7 +137,16 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             print("error")
         }
         
-    
+        //1.yol Kayıttan sonra verileri güncellemek için
+        
+        NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil) // Kayıt olan gözlemciler için mesaj yollama aleti , diger viewController'lara veri gönderme
+        
+        //2.yol Kayıttan sonra verileri güncellemek için
+        
+        //getData()
+        // self.navigationController?.popViewController(animated: true) //Bir önceki viewController'a gitme
+        
+       
         
         
     }
