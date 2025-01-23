@@ -67,32 +67,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nlz-7O-SZC">
-                                <rect key="frame" x="79.000000000000014" y="535" width="234.33333333333337" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4su-TF-ZyW">
-                                <rect key="frame" x="79.000000000000014" y="589" width="234.33333333333337" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3s-W6-irM">
-                                <rect key="frame" x="79.000000000000014" y="645" width="234.33333333333337" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="haR-Cx-ygO">
-                                <rect key="frame" x="16" y="126" width="360.33333333333331" height="380"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nlz-7O-SZC">
+                                <rect key="frame" x="79" y="535" width="235" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="360.32999999999998" id="SA0-a7-bh8"/>
-                                    <constraint firstAttribute="height" constant="380" id="yoN-N6-XiU"/>
+                                    <constraint firstAttribute="height" constant="34" id="6gh-lN-gRc"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv9-ht-eh8">
-                                <rect key="frame" x="143" y="687" width="106.33333333333331" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4su-TF-ZyW">
+                                <rect key="frame" x="79" y="589" width="235" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="ePj-5i-c77"/>
+                                    <constraint firstAttribute="height" constant="34" id="Jr1-B3-ebz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3s-W6-irM">
+                                <rect key="frame" x="79" y="645" width="235" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Y6l-Ia-6nF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv9-ht-eh8">
+                                <rect key="frame" x="143" y="687" width="107" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="3VD-YP-pIc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
@@ -100,25 +102,33 @@
                                     <action selector="saveButtonClicked:" destination="FqJ-cw-6y8" eventType="touchUpInside" id="Owo-tV-L8W"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="haR-Cx-ygO">
+                                <rect key="frame" x="33" y="120" width="327" height="367"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="367" id="HoD-Vt-aKm"/>
+                                    <constraint firstAttribute="width" constant="327" id="SnS-AV-5oM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vud-ux-9cS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="trailing" secondItem="4su-TF-ZyW" secondAttribute="trailing" id="0Lv-Nx-fXN"/>
-                            <constraint firstItem="vud-ux-9cS" firstAttribute="bottom" secondItem="pv9-ht-eh8" secondAttribute="bottom" constant="69" id="4xu-Tp-eFE"/>
-                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="centerX" secondItem="4su-TF-ZyW" secondAttribute="centerX" id="57v-QP-oS2"/>
-                            <constraint firstItem="haR-Cx-ygO" firstAttribute="leading" secondItem="4Ii-wv-6vz" secondAttribute="leadingMargin" id="BEx-jO-KRW"/>
-                            <constraint firstItem="c3s-W6-irM" firstAttribute="centerX" secondItem="pv9-ht-eh8" secondAttribute="centerX" id="BzR-en-wf8"/>
-                            <constraint firstItem="4su-TF-ZyW" firstAttribute="trailing" secondItem="c3s-W6-irM" secondAttribute="trailing" id="JVF-JZ-Vaa"/>
-                            <constraint firstItem="c3s-W6-irM" firstAttribute="top" secondItem="4su-TF-ZyW" secondAttribute="bottom" constant="22" id="JVN-0N-h3r"/>
-                            <constraint firstItem="haR-Cx-ygO" firstAttribute="top" secondItem="vud-ux-9cS" secondAttribute="top" constant="23" id="MGK-cI-hl2"/>
-                            <constraint firstItem="4su-TF-ZyW" firstAttribute="top" secondItem="Nlz-7O-SZC" secondAttribute="bottom" constant="20" id="UFI-Nt-NnG"/>
-                            <constraint firstItem="pv9-ht-eh8" firstAttribute="top" secondItem="c3s-W6-irM" secondAttribute="bottom" constant="8" id="ZTO-k9-aYo"/>
-                            <constraint firstItem="4su-TF-ZyW" firstAttribute="leading" secondItem="c3s-W6-irM" secondAttribute="leading" id="ad8-Dy-DI3"/>
-                            <constraint firstItem="4su-TF-ZyW" firstAttribute="leading" secondItem="vud-ux-9cS" secondAttribute="leading" constant="79" id="hqz-a2-Qo5"/>
-                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="top" secondItem="haR-Cx-ygO" secondAttribute="bottom" constant="29" id="jhl-cg-30b"/>
-                            <constraint firstItem="pv9-ht-eh8" firstAttribute="leading" secondItem="vud-ux-9cS" secondAttribute="leading" constant="143" id="lbh-EI-XFq"/>
-                            <constraint firstItem="haR-Cx-ygO" firstAttribute="centerX" secondItem="4su-TF-ZyW" secondAttribute="centerX" id="mKt-27-MaW"/>
+                            <constraint firstItem="4su-TF-ZyW" firstAttribute="leading" secondItem="c3s-W6-irM" secondAttribute="leading" id="25X-Hm-Q1A"/>
+                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="centerX" secondItem="4Ii-wv-6vz" secondAttribute="centerX" id="CJ3-RD-qX9"/>
+                            <constraint firstItem="vud-ux-9cS" firstAttribute="bottom" secondItem="pv9-ht-eh8" secondAttribute="bottom" constant="69" id="Hi0-K3-mzq"/>
+                            <constraint firstItem="c3s-W6-irM" firstAttribute="centerX" secondItem="pv9-ht-eh8" secondAttribute="centerX" id="Xd1-ni-fZG"/>
+                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="leading" secondItem="4su-TF-ZyW" secondAttribute="leading" id="Z9J-9v-JIq"/>
+                            <constraint firstItem="4su-TF-ZyW" firstAttribute="top" secondItem="Nlz-7O-SZC" secondAttribute="bottom" constant="20" id="bLX-Ey-PQR"/>
+                            <constraint firstItem="pv9-ht-eh8" firstAttribute="leading" secondItem="vud-ux-9cS" secondAttribute="leading" constant="143" id="bdB-WF-eWT"/>
+                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="trailing" secondItem="4su-TF-ZyW" secondAttribute="trailing" id="dgM-z9-tOy"/>
+                            <constraint firstItem="c3s-W6-irM" firstAttribute="top" secondItem="4su-TF-ZyW" secondAttribute="bottom" constant="22" id="lOo-Iy-ShO"/>
+                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="top" secondItem="haR-Cx-ygO" secondAttribute="bottom" constant="48" id="pfD-FZ-qhK"/>
+                            <constraint firstItem="Nlz-7O-SZC" firstAttribute="leading" secondItem="vud-ux-9cS" secondAttribute="leading" constant="79" id="r2i-I6-DMx"/>
+                            <constraint firstItem="haR-Cx-ygO" firstAttribute="leading" secondItem="vud-ux-9cS" secondAttribute="leading" constant="33" id="spb-pg-OpW"/>
+                            <constraint firstItem="haR-Cx-ygO" firstAttribute="top" secondItem="vud-ux-9cS" secondAttribute="top" constant="17" id="t5u-mE-Zsf"/>
+                            <constraint firstItem="4su-TF-ZyW" firstAttribute="trailing" secondItem="c3s-W6-irM" secondAttribute="trailing" id="uSR-fi-ekj"/>
+                            <constraint firstItem="pv9-ht-eh8" firstAttribute="top" secondItem="c3s-W6-irM" secondAttribute="bottom" constant="8" id="vkF-cW-AnA"/>
+                            <constraint firstItem="haR-Cx-ygO" firstAttribute="centerX" secondItem="Nlz-7O-SZC" secondAttribute="centerX" id="x5P-A8-cRv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XiN-62-NxG"/>
@@ -126,6 +136,7 @@
                         <outlet property="artistText" destination="4su-TF-ZyW" id="Fa3-ox-iCJ"/>
                         <outlet property="imageView" destination="haR-Cx-ygO" id="b0t-1V-7cI"/>
                         <outlet property="nameText" destination="Nlz-7O-SZC" id="tFo-aV-OZY"/>
+                        <outlet property="saveButton" destination="pv9-ht-eh8" id="uZc-BD-cS8"/>
                         <outlet property="yearText" destination="c3s-W6-irM" id="f0u-Ae-UK3"/>
                     </connections>
                 </viewController>

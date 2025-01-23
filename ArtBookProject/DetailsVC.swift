@@ -15,6 +15,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var artistText: UITextField!
     @IBOutlet weak var yearText: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var chosenPainting = ""
     var chosenPaintingId : UUID?
@@ -25,6 +26,9 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
         
         if chosenPainting != "" {
+            
+            saveButton.isHidden = true
+            
             // CoreData
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -65,6 +69,8 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             
             
         }else {
+            saveButton.isHidden = false
+            saveButton.isEnabled = false
             nameText.text = ""
             artistText.text = ""
             yearText.text = ""
@@ -99,6 +105,7 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         imageView.image = info[.originalImage] as? UIImage // any tipinde dönen resim objesinin UIImage'e dönüştürülmesi
+        saveButton.isEnabled = true
         self.dismiss(animated: true) // picker'ın kapatılması
         
     } // image seçimi bittiğinde any tipinde seçilen görselin döndürülmesi
@@ -140,6 +147,8 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         //1.yol Kayıttan sonra verileri güncellemek için
         
         NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil) // Kayıt olan gözlemciler için mesaj yollama aleti , diger viewController'lara veri gönderme
+        
+        self.navigationController?.popViewController(animated: true)
         
         //2.yol Kayıttan sonra verileri güncellemek için
         
